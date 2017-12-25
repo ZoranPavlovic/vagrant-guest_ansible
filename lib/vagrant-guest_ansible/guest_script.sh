@@ -30,10 +30,9 @@ if ! command -v ansible >/dev/null; then
                 echo "neither yum nor apt-get found!"
                 exit 1
         fi
-        echo "Installing pip via easy_install."
-        wget https://bootstrap.pypa.io/ez_setup.py
-        sudo python ez_setup.py && rm -f ez_setup.py
-        sudo easy_install pip
+        echo "Installing pip via get-pip."
+        wget https://bootstrap.pypa.io/get-pip.py
+        sudo python get-pip.py && rm -f get-pip.py
         # Make sure setuptools are installed crrectly.
         sudo pip install setuptools --no-use-wheel --upgrade
         echo "Installing required python modules."
